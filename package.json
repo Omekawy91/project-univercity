@@ -1,10 +1,10 @@
 {
   "name": "project-weynak",
   "version": "1.0.0",
-  "main": "server.js",
+  "main": "weynak.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node weynak.js"
   },
   "keywords": [],
   "author": "",

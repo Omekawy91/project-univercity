@@ -9,13 +9,10 @@ const asyncHandler = require("express-async-handler");
 const { User, Meeting, Participant, Movement } = require("./model");
 
 const app = express();
-const port = process.env.PORT ||8008;
-
+const port = process.env.PORT || 8008;
 
 app.use(express.json());
 app.use(cors());
-
-
 
 mongoose.connect("mongodb://localhost:27017/weynak")
     .then(() => console.log("Connected to MongoDB"))
@@ -118,10 +115,16 @@ app.post("/reset-password", asyncHandler(async (req, res) => {
 
     res.json({ message: "Password reset successfully!" });
 }));
+
 app.get('/', (req, res) => {
     res.send("Welcome to the Home Page!");
 });
-app.listen(port,() => {
+
+app.post("/logout", (req, res) => {
+    res.json({ message: "Logged out successfully!" });
+});
+
+app.listen(port, () => {
     console.log(`Server running on http://localhost:${port}`);
 });
 

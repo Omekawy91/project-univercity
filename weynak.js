@@ -9,7 +9,7 @@ const asyncHandler = require("express-async-handler");
 const { User, Meeting, Participant, Movement } = require("./model");
 
 const app = express();
-const port = process.env.PORT || 8008;
+const port = process.env.PORT || 3000;
 
 app.use(express.json());
 app.use(cors());
